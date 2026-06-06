@@ -76,8 +76,7 @@ stages {
         } 
     
     }
-}
-*/
+}*/
 
 pipeline {
     agent {
