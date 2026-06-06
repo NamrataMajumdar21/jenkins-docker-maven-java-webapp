@@ -40,7 +40,8 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			<h2>Welcome to LinuxWorld, India , in fully automated jenkins. This pape has been created by a full end to end jenkins pipeline...2>
+			<h2>Welcome to LinuxWorld, India </h2>
+			<h2> Good work takes time. Be patient and beleive yourself. </h2>
 			<h3>Contact training@lwindia.com or mob 9351009002</h3>
 		</div>	
 	</div>
