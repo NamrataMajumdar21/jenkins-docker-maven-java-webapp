@@ -36,15 +36,15 @@ stages {
     stage ('Deploy webApp in QA Test env') {
         steps {
             sshagent(['QA_ENV_SSH_CRED']) {
-                sh "ssh -o StrictHostKeyChecking=no ec2-user@13.232.111.194 sudo docker rm -f myjavaapp"
-                sh "ssh ec2-user@13.232.111.194 sudo docker run -d -p 8080:8080 --name myjavaapp namrata21101998/javaweb:${BUILD_TAG}"
+                sh "ssh -o StrictHostKeyChecking=no ec2-user@13.232.108.218 sudo docker rm -f myjavaapp"
+                sh "ssh ec2-user@13.232.108.218 sudo docker run -d -p 8080:8080 --name myjavaapp namrata21101998/javaweb:${BUILD_TAG}"
                     }
                 }
             }
     stage ('QAT Testing') {
         steps {
             retry(10) {
-                sh 'curl --silent http://13.232.111.194:8080/java-web-app/ | grep india'
+                sh 'curl --silent http://13.232.108.218:8080/java-web-app/ | grep india'
                     }
                 }
             }
@@ -67,8 +67,8 @@ stages {
     stage('Deploy webAPP in Prod Env') {
             steps {
                sshagent(['QA_ENV_SSH_CRED']) {
-                sh "ssh -o StrictHostKeyChecking=no ec2-user@3.110.92.213 sudo docker rm -f myjavaapp"
-                sh "ssh ec2-user@3.110.92.213 sudo docker run -d -p 8080:8080 --name myjavaapp namrata21101998/javaweb:${BUILD_TAG}"
+                sh "ssh -o StrictHostKeyChecking=no ec2-user@3.108.52.98 sudo docker rm -f myjavaapp"
+                sh "ssh ec2-user@3.108.52.98 sudo docker run -d -p 8080:8080 --name myjavaapp namrata21101998/javaweb:${BUILD_TAG}"
                     }
 
                 }
